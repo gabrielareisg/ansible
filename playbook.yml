@@ -1,0 +1,11 @@
+- name: Configuração da minha VM
+  hosts: vm 
+  become: yes
+
+  tasks:
+  - name: instalação do apache2
+    apt: 
+        name: apache2
+
+  - name: cria arquivo teste
+    shell: "touch /root/teste.py"
