@@ -3,9 +3,11 @@
   become: yes
 
   tasks:
-  - name: instalação do apache2
-    apt: 
-        name: apache2
-
-  - name: cria arquivo teste
-    shell: "touch /root/teste.py"
+    
+  - name: inclui a role do apache
+    include_role:
+      name: geerlingguy.apache    
+   
+  - name: inclui a role do curso 
+    include_role:
+      name: curso
